@@ -22,7 +22,7 @@ def index():
     return render_template("home.html", todo_list = todo_list)
 
 @app.route("/add", methods=["POST"])
-def add(todo_id):
+def add():
     title = request.form.get("title")
     new_todo = Todo(title=title, complete=False)
     db.session.add(new_todo)
